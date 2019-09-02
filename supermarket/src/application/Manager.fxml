@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.09734513274336283" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="625.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ManagerController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="46.0" prefWidth="598.0" SplitPane.resizableWithParent="false">
+         <children>
+            <Label layoutX="237.0" layoutY="18.0" prefHeight="28.0" prefWidth="124.0" text="后 台 管 理" textFill="#5c0a41">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="646.0" prefWidth="598.0">
+         <children>
+            <TabPane layoutY="-1.0" prefHeight="674.0" prefWidth="598.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="tab_staff" text="员工账号管理">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="536.0" prefWidth="598.0">
+                           <children>
+                              <Button fx:id="btn_ok1" layoutX="183.0" layoutY="338.0" mnemonicParsing="false" onMouseClicked="#btn_ok1_clicked" text="确定">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_exit1" layoutX="375.0" layoutY="338.0" mnemonicParsing="false" onMouseClicked="#btn_exit_clicked" text="退出">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="140.0" layoutY="57.0" text="操作类型">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="140.0" layoutY="102.0" text="账       号">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="account" layoutX="228.0" layoutY="99.0" prefHeight="23.0" prefWidth="159.0" />
+                              <ComboBox fx:id="op_staff" layoutX="227.0" layoutY="54.0" prefHeight="23.0" prefWidth="160.0" visibleRowCount="5" />
+                              <Label layoutX="140.0" layoutY="187.0" text="姓       名">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="pass" layoutX="227.0" layoutY="143.0" />
+                              <TextField fx:id="name" layoutX="227.0" layoutY="184.0" />
+                              <Label layoutX="140.0" layoutY="146.0" text="账号密码">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="141.0" layoutY="232.0" text="身份证号">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="id" layoutX="227.0" layoutY="229.0" />
+                              <Label layoutX="133.0" layoutY="274.0" text="管理员权限">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="priv" layoutX="227.0" layoutY="271.0" prefHeight="23.0" prefWidth="160.0" visibleRowCount="5" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="tab_good" onSelectionChanged="#tab_changed" text="商品信息管理">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="590.0" prefWidth="598.0">
+                           <children>
+                              <TableView fx:id="table_patreg" editable="true" layoutX="18.0" layoutY="148.0" prefHeight="330.0" prefWidth="562.0">
+                                <columns>
+                                  <TableColumn fx:id="SPBH" editable="false" prefWidth="77.0" text="商品编号" />
+                                  <TableColumn fx:id="SPMC" editable="false" prefWidth="260.0" text="商品名称" />
+                                    <TableColumn fx:id="SPDJ" editable="false" minWidth="0.0" prefWidth="118.0" text="商品单价" />
+                                    <TableColumn fx:id="KCL" editable="false" prefWidth="106.0" text="库存量" />
+                                </columns>
+                              </TableView>
+                              <AnchorPane layoutY="350.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              <Label layoutX="319.0" layoutY="423.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="price" layoutX="464.0" layoutY="31.0" prefHeight="23.0" prefWidth="67.0" />
+                              <Label layoutX="200.0" layoutY="5.0" prefHeight="18.0" prefWidth="45.0" text="商品名">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="comname" layoutX="94.0" layoutY="31.0" prefHeight="23.0" prefWidth="257.0" />
+                              <Label layoutX="483.0" layoutY="7.0" text="单价">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="quantity" layoutX="349.0" layoutY="31.0" prefHeight="23.0" prefWidth="116.0" />
+                              <Button fx:id="btn_off" layoutX="427.0" layoutY="493.0" mnemonicParsing="false" onMouseClicked="#btn_unreg_clicked" prefHeight="28.0" prefWidth="67.0" text="下架" />
+                              <Label layoutX="377.0" layoutY="7.0" text="进货数量">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="comno" layoutX="3.0" layoutY="31.0" prefHeight="23.0" prefWidth="91.0" />
+                              <Label layoutX="14.0" layoutY="6.0" prefHeight="18.0" prefWidth="66.0" text="商品编号">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="op_good" layoutX="94.0" layoutY="82.0" prefHeight="23.0" prefWidth="176.0" />
+                              <Label layoutX="14.0" layoutY="84.0" prefHeight="18.0" prefWidth="66.0" text="操作类型">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btn_ok" layoutX="351.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#btn_ok_clicked" prefHeight="28.0" prefWidth="65.0" text="确定" />
+                              <Button fx:id="btn_exit" layoutX="513.0" layoutY="493.0" mnemonicParsing="false" onMouseClicked="#btn_exit_clicked" prefHeight="28.0" prefWidth="65.0" text="退出" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children></AnchorPane>
+  </items>
+</SplitPane>

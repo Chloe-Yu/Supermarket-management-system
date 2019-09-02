@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.09734513274336283" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="680.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CashierController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="46.0" prefWidth="598.0" SplitPane.resizableWithParent="false">
+         <children>
+            <Label layoutX="237.0" layoutY="18.0" prefHeight="28.0" prefWidth="124.0" text="收           银" textFill="#5c0a41">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="646.0" prefWidth="598.0">
+         <children>
+            <TabPane layoutY="-1.0" prefHeight="674.0" prefWidth="598.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="tab_unreg" text="收银">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="590.0" prefWidth="598.0">
+                           <children>
+                              <TableView fx:id="table_patreg" editable="true" layoutY="87.0" prefHeight="270.0" prefWidth="589.0">
+                                <columns>
+                                  <TableColumn fx:id="SPBH" editable="false" prefWidth="69.0" text="商品编号" />
+                                  <TableColumn fx:id="SPMC" editable="false" prefWidth="198.0" text="商品名称" />
+                                    <TableColumn fx:id="SPDJ" editable="false" minWidth="0.0" prefWidth="84.0" text="商品单价" />
+                                    <TableColumn fx:id="GMSL" editable="false" minWidth="0.0" prefWidth="75.0" text="购买数量" />
+                                    <TableColumn fx:id="JG" editable="false" prefWidth="76.0" text="价格" />
+                                    <TableColumn fx:id="KCL" editable="false" prefWidth="94.0" text="库存量" />
+                                </columns>
+                              </TableView>
+                              <AnchorPane layoutY="350.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="40.0" layoutY="60.0" text="应缴金额">
+                                       <font>
+                                          <Font name="Arial Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="40.0" layoutY="100.0" text="找零金额">
+                                       <font>
+                                          <Font name="Arial Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="319.0" layoutY="423.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="25.0" layoutY="12.0" prefHeight="22.0" prefWidth="68.0" text="查询形式">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="recall" layoutX="114.0" layoutY="12.0" prefHeight="23.0" prefWidth="101.0" visibleRowCount="5" />
+                              <TextField fx:id="checkinfo" layoutX="271.0" layoutY="12.0" />
+                              <Label layoutX="29.0" layoutY="53.0" text="商品编号">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btn_card" layoutX="477.0" layoutY="9.0" mnemonicParsing="false" onMouseClicked="#btn_vip_okay" prefHeight="28.0" prefWidth="66.0" text="查卡" />
+                              <TextField fx:id="comno" layoutX="110.0" layoutY="50.0" onAction="#comno_okay" />
+                              <Label layoutX="311.0" layoutY="53.0" text="商品数量">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="quantity" layoutX="384.0" layoutY="50.0" onAction="#quantity_okay" prefHeight="23.0" prefWidth="159.0" />
+                              <TextField fx:id="cost" editable="false" layoutX="110.0" layoutY="409.0" />
+                              <Label layoutX="313.0" layoutY="412.0" text="交款金额">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="pay1" layoutX="383.0" layoutY="409.0" onAction="#pay_okay" />
+                              <TextField fx:id="change" editable="false" layoutX="110.0" layoutY="450.0" />
+                              <Label layoutX="313.0" layoutY="453.0" text="流水单号">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="regnum" editable="false" layoutX="383.0" layoutY="450.0" />
+                              <Button fx:id="btn_ok1" layoutX="190.0" layoutY="515.0" mnemonicParsing="false" onMouseClicked="#commit_clicked" text="确定">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_exit1" layoutX="373.0" layoutY="515.0" mnemonicParsing="false" onMouseClicked="#btn_exit_clicked" prefHeight="28.0" prefWidth="50.0" text="退出">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_unreg" layoutX="510.0" layoutY="366.0" mnemonicParsing="false" onMouseClicked="#btn_unreg_clicked" prefHeight="28.0" prefWidth="67.0" text="移除" />
+                              <Button fx:id="btn_clear" layoutX="423.0" layoutY="366.0" mnemonicParsing="false" onMouseClicked="#btn_clear_clicked" prefHeight="28.0" prefWidth="65.0" text="清空" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="tab_reg" text="办卡">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="536.0" prefWidth="598.0">
+                           <children>
+                              <Button fx:id="btn_ok" layoutX="175.0" layoutY="235.0" mnemonicParsing="false" onMouseClicked="#btn_card_okay" text="确定">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_exit" layoutX="338.0" layoutY="235.0" mnemonicParsing="false" onMouseClicked="#btn_exit_clicked" text="退出">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="140.0" layoutY="57.0" text="是否交费">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="140.0" layoutY="166.0" text="会员卡号">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="phone" layoutX="227.0" layoutY="110.0" prefHeight="23.0" prefWidth="159.0" />
+                              <ComboBox fx:id="pay" layoutX="227.0" layoutY="54.0" prefHeight="23.0" prefWidth="160.0" visibleRowCount="5" />
+                              <Label layoutX="140.0" layoutY="113.0" text="手机号码">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="cardno" editable="false" layoutX="227.0" layoutY="163.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="tab_str" text="盘存">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="660.0" prefWidth="598.0">
+                           <children>
+                              <TableView fx:id="table_stream" editable="true" layoutX="32.0" layoutY="23.0" prefHeight="302.0" prefWidth="495.0">
+                                 <columns>
+                                    <TableColumn fx:id="LSBH" editable="false" prefWidth="112.0" text="流水编号" />
+                                    <TableColumn fx:id="JYSJ" editable="false" prefWidth="229.0" text="交易时间" />
+                                    <TableColumn fx:id="LSJE" editable="false" minWidth="0.0" prefWidth="152.0" text="流水金额" />
+                                 </columns>
+                              </TableView>
+                              <AnchorPane layoutY="350.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="LSZE" layoutX="40.0" layoutY="14.0" text="流水总额">
+                                       <font>
+                                          <Font name="Arial Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="stream_sum" editable="false" layoutX="106.0" layoutY="11.0" />
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="319.0" layoutY="423.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btn_exit2" layoutX="469.0" layoutY="360.0" mnemonicParsing="false" onMouseClicked="#btn_exit_clicked" prefHeight="28.0" prefWidth="50.0" text="退出">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_reg" layoutX="355.0" layoutY="360.0" mnemonicParsing="false" onMouseClicked="#register_clicked" prefHeight="28.0" prefWidth="50.0" text="盘存">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
